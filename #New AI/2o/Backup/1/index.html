@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szymdows AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>History</h2>
+    <div id="history" style="flex: 1; overflow-y: auto;"></div>
+  </div>
+  <div class="main-content">
+    <header>
+      <span>Szymdows AI</span>
+      <span class="header-subtext">A specialized model for mathematics, arithmetic, and facts.</span>
+    </header>
+    <div class="chat-container">
+      <div class="chat-log" id="chat-log"></div>
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Ask something about a topic...">
+        <button onclick="askWiki()">Ask</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
