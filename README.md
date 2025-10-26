@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icongithub.png" alt="Aether Browser Icon" width="100">
+  <img src="icongithub.png" alt="Aether Browser Icon" width="150">
   <br>
   <strong>Aether Browser</strong>
 </p>
