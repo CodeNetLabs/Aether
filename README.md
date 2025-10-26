@@ -1,4 +1,8 @@
-# ![Aether Browser Icon](icongithub.png) Aether Browser
+<p align="center">
+  <img src="icongithub.png" alt="Aether Browser Icon" width="100">
+  <br>
+  <strong>Aether Browser</strong>
+</p>
 
 **Aether Browser** is a lightweight, fast, and modern web browser focused on **privacy, performance, and customization**. It gives users a clean and minimal interface while offering powerful browsing features. This project is fully **open-source**, and anyone is welcome to contribute, report issues, or suggest improvements.
 
