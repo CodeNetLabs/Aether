@@ -1,5 +1,24 @@
-# Aether
-A web browser in development designed for speed, performance, and security.
+# ![Aether Browser Icon](github/icon.png) Aether Browser
+
+**Aether Browser** is a lightweight, fast, and modern web browser focused on **privacy, performance, and customization**. It gives users a clean and minimal interface while offering powerful browsing features. This project is fully **open-source**, and anyone is welcome to contribute, report issues, or suggest improvements.
+
+---
+
+## Features
+- **Fast and Lightweight** – Optimized for smooth browsing.  
+- **Customizable UI** – Change themes, layouts, and more to match your style.  
+- **Privacy-Focused** – Block trackers and protect your data.  
+- **Open to Collaboration** – Everyone can contribute! Fork, submit pull requests, or suggest features.  
+
+---
+
+## How to Contribute
+We welcome contributions from the community!  
+1. Fork the repository.  
+2. Create a new branch for your feature or bug fix.  
+3. Submit a pull request with a clear description of your changes.  
+
+---
 
 # Licenses:
 - **Aether Browser**:
