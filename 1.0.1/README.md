@@ -1,7 +1,7 @@
 <p align="center">
   <img src="icongithub.png" alt="Aether Browser Icon" width="200">
   <br>
-  <h3><strong>Aether Browser v1.0.0</strong></h3>
+  <h3><strong>Aether Browser v1.0.1</strong></h3>
 </p>
 
 This update **focuses on improving the overall look and performance** of Aether Browser.
