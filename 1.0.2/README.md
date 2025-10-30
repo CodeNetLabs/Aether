@@ -4,7 +4,7 @@
   <h3><strong>Aether Browser v1.0.2</strong></h3>
 </p>
 
-This update **focuses on improving the olook of tabs** in Aether Browser.
+This update **focuses on improving the look of tabs** in Aether Browser.
 
 ---
 
