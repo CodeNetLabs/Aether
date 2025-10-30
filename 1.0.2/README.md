@@ -4,17 +4,15 @@
   <h3><strong>Aether Browser v1.0.2</strong></h3>
 </p>
 
-This update **focuses on improving the overall look and performance** of Aether Browser.
-It introduces **a cleaner user interface, faster loading, and visual enhancements** to make browsing smoother and more modern.
+This update **focuses on improving the olook of tabs** in Aether Browser.
 
 ---
 
 ## Highlights
-1. New UI design - sleeker, more professional layout
-2. Performance improvements - faster startup and smoother page loading
-3. Added icons - cleaner visuals with modern icon sets
-4. Refinements - minor layout and styling tweaks
-5. Ready for open collaboration and contributions
+1. Tab design - sleeker, more professional layout
+2. Faster page loading - smoother and faster page loading
+3. Refinements - minor layout and styling tweaks
+4. Ready for open collaboration and contributions
 
 ---
 
