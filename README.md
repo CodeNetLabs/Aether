@@ -24,6 +24,12 @@ We welcome contributions from the community!
 
 ---
 
+## In order to work on this project, you need to install Python and the required libraries:
+1. PyQt6
+2. PyQt6-WebEngine
+
+---
+
 # Licenses:
 - **Aether Browser**:
   - Licensed under **GNU General Public License v3.0 (GPLv3)**. See the [GPL-3.0 license](https://github.com/CodeNetLabs/Aether?tab=GPL-3.0-3-ov-file) for more details.
