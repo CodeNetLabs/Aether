@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aether — New Tab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent-light: #0078ff;
+  --accent-light-hover: #0066d6;
+  --bg-light: #f5f9ff;
+  --surface-light: rgba(255, 255, 255, 0.92);
+  --text-light: #101216;
+  --text-secondary-light: #6b7280;
+  
+  --accent-dark: #3aa0ff;
+  --accent-dark-hover: #2b8ce6;
+  --bg-dark: #0f1318;
+  --surface-dark: rgba(18, 22, 27, 0.92);
+  --text-dark: #e9eef8;
+  --text-secondary-dark: #9ca3af;
+
+  --radius: 24px;
+  --container-width: 760px;
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Enhanced background with gradient animation */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 120, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 0, 255, 0.03) 0%, transparent 50%);
+  z-index: -1;
+  animation: bgAnim 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgAnim {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Main container - now transparent */
+.wrap {
+  width: min(var(--container-width), 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 32px;
+  border-radius: var(--radius);
+  background: transparent;
+  transition: all var(--transition);
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced logo with better animation */
+.logo {
+  width: 160px;
+  height: 160px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 12px 28px rgba(0, 110, 255, 0.2));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+  animation: logoFloat 6s ease-in-out infinite;
+}
+
+.logo:hover {
+  transform: translateY(-6px) scale(1.08);
+  filter: drop-shadow(0 16px 40px rgba(0, 120, 255, 0.3));
+  animation-play-state: paused;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Improved typography */
+h1 {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent-light), #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textReveal 1s ease-out;
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--text-secondary-light);
+  font-weight: 400;
+  text-align: center;
+  max-width: 500px;
+  margin-top: -20px;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+/* Enhanced search bar - now with its own background */
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 680px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all var(--transition);
+  animation: slideIn 0.8s ease-out 0.4s both;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 12px 36px rgba(0, 110, 255, 0.15);
+  transform: translateY(-2px);
+  border-color: rgba(0, 120, 255, 0.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 18px 24px;
+  font-size: 16px;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: 400;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary-light);
+  transition: color 0.2s ease;
+}
+
+.search-bar input:focus::placeholder {
+  color: transparent;
+}
+
+.search-bar button {
+  border: none;
+  outline: none;
+  background: var(--accent-light);
+  color: white;
+  font-weight: 600;
+  padding: 0 28px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-bar button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.search-bar button:hover {
+  background: var(--accent-light-hover);
+}
+
+.search-bar button:hover::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* Enhanced controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  margin-top: 8px;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.controls button {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  background: #f8faff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.controls button i {
+  font-size: 16px;
+}
+
+/* Enhanced footer */
+footer {
+  position: fixed;
+  bottom: 24px;
+  left: 31.3%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: var(--text-secondary-light);
+  font-weight: 400;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo { 
+    width: 120px; 
+    height: 120px; 
+  }
+  
+  h1 { 
+    font-size: 32px; 
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .wrap { 
+    padding: 32px 24px; 
+    gap: 24px;
+  }
+  
+  .search-bar input {
+    padding: 16px 20px;
+  }
+  
+  .search-bar button {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo { 
+    width: 100px; 
+    height: 100px; 
+  }
+  
+  h1 { 
+    font-size: 28px; 
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+  
+  .wrap { 
+    padding: 24px 20px; 
+    gap: 20px;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+  
+  .search-bar input {
+    padding: 16px;
+  }
+  
+  .search-bar button {
+    padding: 12px;
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+/* Dark theme */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark .subtitle {
+  color: var(--text-secondary-dark);
+}
+
+body.dark .search-bar {
+  background: rgba(30, 35, 45, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark .search-bar:focus-within {
+  border-color: rgba(58, 160, 255, 0.3);
+}
+
+body.dark .search-bar input::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+body.dark .search-bar button {
+  background: var(--accent-dark);
+}
+
+body.dark .search-bar button:hover {
+  background: var(--accent-dark-hover);
+}
+
+body.dark .controls button {
+  background: rgba(30, 35, 45, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-dark);
+}
+
+body.dark .controls button:hover {
+  background: rgba(40, 45, 55, 0.8);
+}
+
+body.dark footer {
+  color: var(--text-secondary-dark);
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<main class="wrap">
+  <div id="logo" class="logo"></div>
+  <h1>Aether</h1>
+  <p class="subtitle">Your intelligent browser companion for a seamless web experience</p>
+
+  <div class="search-bar">
+    <input id="searchInput" type="text" placeholder="Ask Aether or paste a URL…">
+    <button id="searchBtn">
+      <span>Search</span>
+    </button>
+  </div>
+
+  <div class="controls">
+    <button id="toggleThemeBtn">
+      <span>Change theme</span>
+    </button>
+  </div>
+</main>
+
+<footer>© 2025 Aether Browser — A community browser project — See 
+<a href="https://github.com/CodeNetLabs/Aether">the open source repository.</a>
+</footer>
+
+<script>
+const LOGO_PATH = '../icons/384.png';
+const PREF_REL_PATH = '../../preferences.txt';
+
+document.getElementById('logo').style.backgroundImage = `url("${LOGO_PATH}")`;
+
+const input = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
+searchBtn.addEventListener('click', doSearch);
+input.addEventListener('keydown', (e) => { 
+  if (e.key === 'Enter') doSearch(); 
+});
+
+function doSearch(){
+  const q = input.value.trim();
+  if(!q) return;
+  
+  // Add button animation
+  searchBtn.style.transform = 'scale(0.95)';
+  setTimeout(() => {
+    searchBtn.style.transform = '';
+  }, 150);
+  
+  if(/^https?:\/\//i.test(q)) {
+    location.href = q;
+  } else {
+    location.href = `https://www.google.com/search?q=${encodeURIComponent(q)}`;
+  }
+}
+
+function setThemeClass(theme){
+  if(theme === 'dark') {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+  try { 
+    localStorage.setItem('aether_theme', theme); 
+  } catch(e){}
+}
+
+async function loadTheme(){
+  try{
+    const res = await fetch(PREF_REL_PATH, {cache: 'no-store'});
+    if(!res.ok) throw new Error();
+    const txt = await res.text();
+    const m = txt.match(/theme:\s*"(dark|light)"/i);
+    setThemeClass(m ? m[1].toLowerCase() : 'light');
+  } catch {
+    const stored = localStorage.getItem('aether_theme');
+    setThemeClass(stored === 'dark' ? 'dark' : 'light');
+  }
+}
+
+document.getElementById('toggleThemeBtn').addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('aether_theme', isDark ? 'dark' : 'light');
+  
+  // Add button animation
+  const btn = document.getElementById('toggleThemeBtn');
+  btn.style.transform = 'scale(0.95)';
+  setTimeout(() => {
+    btn.style.transform = '';
+  }, 150);
+});
+
+loadTheme();
+</script>
+</body>
+</html>
