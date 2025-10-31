@@ -6,7 +6,7 @@
 
 **Aether Browser** is a lightweight, fast, and modern web browser focused on **privacy, performance, and customization**. It gives users a clean and minimal interface while offering powerful browsing features. This project is fully **open-source**, and anyone is welcome to contribute, report issues, or suggest improvements.
 
----
+--- 
 
 ## Features
 - **Fast and Lightweight** – Optimized for smooth browsing.  
