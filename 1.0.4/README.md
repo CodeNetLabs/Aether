@@ -16,7 +16,7 @@ It introduces **an about section with details**.
 4. Refinements - minor layout and styling tweaks.
 5. Ready for open collaboration and contributions!
 6. About details introduced.
-
+ 
 ---
 
 ## How to Contribute
