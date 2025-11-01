@@ -8,7 +8,7 @@ This update **focuses on finishing incomplete features** of Aether Browser.
 It introduces **an about section with details**.
 
 ---
-
+ 
 ## Highlights
 1. Ad and tracker blocking - blocks ads and trackers on most webpages online.
 2. Performance improvements - faster startup and smoother page loading for most websites.
