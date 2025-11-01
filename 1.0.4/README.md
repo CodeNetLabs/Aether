@@ -3,7 +3,7 @@
   <br>
   <h3><strong>Aether Browser v1.0.4</strong></h3>
 </p>
- 
+  
 This update **focuses on finishing incomplete features** of Aether Browser.
 It introduces **an about section with details**.
 
